@@ -1,0 +1,237 @@
+/*		ASSIGNMENT 1
+		Emily Rose
+		June 10, 2023 	*/
+
+/* *** GENERAL STYLING *** */
+html {
+	margin: 0;
+	padding: 0;
+	background: rgb(225,225,224); /* Backup in case the image fails */
+	background-image: url("../assets/bg.png");
+	font-size: 10px; /* reset to 10px for ease of sizing */
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Oxygen', sans-serif; /* Make this the default font */
+	color: rgba(52, 52, 50);
+}
+
+/* Type/element selector */
+p {
+	text-align: justify;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Josefin Sans', sans-serif; /* Make all headings use a unique font */
+}
+
+h3 {
+	color: rgba(97, 86, 138);
+	font-size: 3.5rem;
+	/* Make a unique underline that transitions into a translucent colour on the right */
+	border: 0.1em none;
+	border-bottom-style: solid;
+	border-image: linear-gradient(to right, rgb(97, 86, 138), rgba(0, 0, 0, 0%)) 1;
+}
+
+h3:hover {
+	color: rgba(124, 39, 116);
+	transition: color .4s; /* Colour fades in upon transition into hover */
+}
+
+/* Pseudo-element selector */
+a {
+	color: rgb(71, 63, 134);
+	text-decoration: none;
+}
+
+a:link {
+	color: rgb(71, 63, 134);
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:visited {
+	color: rgba(113, 95, 145);
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:focus, a:hover, a:active {
+	color: rgba(86, 60, 141);
+	text-decoration: underline;
+}
+
+/* Attribute selector */
+a[href="/examples/index"],
+a[href="/examples/style.css"]{
+	color: rgb(122, 29, 105); /* Change the colour of these 2 specific links */
+}
+
+/* *** BODY STYLING *** */
+
+/* class selector */
+.page-wrapper {
+	margin: 0 auto;
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+/* Styles all main containers inside of .page-wrapper as secluded bubbles, excluding the sections */
+.summary,
+.preamble,
+.explanation,
+.participation,
+.benefits,
+.requirements {
+	margin: 3em;
+	padding: 3em;
+	background-color: rgba(229, 229, 226);
+	background: rgb(235,239,255);
+	background: radial-gradient(circle, rgb(226, 224, 238) 0%, rgb(238, 238, 238) 100%);
+	border-radius: 1em;
+	border: dotted 1px #361a70;
+}
+
+.intro {
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	height: 70vh;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+/* Descendant combinator */
+header h1 {
+	margin: 2em 0 0;
+	color: rgba(53, 53, 93);
+	font-size: 8rem;
+	background-image: linear-gradient(180deg, rgba(53,53,93,1) 0%, rgb(106, 45, 141) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: all .5s ease-in;
+}
+
+header h1:hover {
+	color: rgba(106, 45, 141);
+	background-image: linear-gradient(180deg, rgba(53,53,93,1) 0%, rgba(161, 50, 151, 1) 100%);
+	letter-spacing: 0.5em;
+	transition: all .5s ease-out;
+}
+
+header h2 {
+	color: rgba(53, 53, 93);
+	font-size: 4rem;
+}
+
+header h2:hover {
+	color: rgba(161, 50, 151, 1);
+	transition: .3s;
+}
+
+abbr {
+	text-decoration: none; /* Remove the underline on "CSS" of the h2*/
+}
+
+/* Child combinator */
+.summary > p {
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.summary > p:nth-of-type(1) {
+	font-style: italic;
+}
+
+/* General Sibling combinator */
+h3 ~ p {
+	font-size: 2rem;
+}
+
+/* Fixed footer that stays on the bottom of the page*/
+footer {
+	padding: 2em 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100vw;
+	background: rgba(186, 190, 199);
+	text-align: center;
+	font-size: 2rem;
+}
+
+footer > a {
+	margin-right: 2em;
+	padding: 0.8em;
+	background-color: rgba(229, 229, 226);
+	border-radius: 0.3em;
+}
+
+.sidebar {
+	margin: 0 auto 15vh;
+	width: 90%;
+}
+
+/* Evenly display all link sections side by side */
+.wrapper {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.wrapper div {
+	width: 80%;
+	font-size: 1.2rem;
+}
+
+.select,
+.archives,
+.resources {
+	font-size: 2.2rem;
+	white-space: nowrap;
+}
+
+/* Adjacent sibling combinator */
+h3 + nav {
+	color: rgba(138, 49, 148);
+}
+
+.sidebar ul {
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar li {
+	line-height: 2em;
+	display: block;
+	list-style-type: none;
+}
+
+/* Style the page names and developer names differently */
+.sidebar li a:link {
+	color: rgba(68, 69, 124);
+}
+
+/* Pseudo-element selector */
+.sidebar li a:nth-of-type(odd) {
+	color: rgba(68, 120, 162);
+}
+
+.sidebar li a:visited {
+	color: rgba(68, 69, 124);
+}
+
+.sidebar li a:visited:nth-of-type(odd) {
+	color: rgba(68, 120, 162);
+}
