@@ -117,7 +117,7 @@ header {
 header h1 {
 	margin: 2em 0 0;
 	color: rgba(53, 53, 93);
-	font-size: 8rem;
+	font-size: 7rem;
 	background-image: linear-gradient(180deg, rgba(53,53,93,1) 0%, rgb(106, 45, 141) 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
