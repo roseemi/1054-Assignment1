@@ -162,23 +162,28 @@ h3 ~ p {
 
 /* Fixed footer that stays on the bottom of the page*/
 footer {
-	padding: 2em 0;
+	padding: 1.5em 0;
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 100vw;
 	background: rgba(186, 190, 199);
+	background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgb(120, 120, 135) 50%, rgb(74, 74, 89) 100%);
 	text-align: center;
 	font-size: 2rem;
 }
 
 footer > a {
 	margin-right: 2em;
-	padding: 0.8em;
+	padding: 0.5em;
 	background-color: rgba(229, 229, 226);
 	border-radius: 0.3em;
+	color: rgb(122, 29, 105);
 }
 
+footer > a:link {
+	color: rgb(122, 29, 105);
+}
 .sidebar {
 	margin: 0 auto 15vh;
 	width: 90%;
